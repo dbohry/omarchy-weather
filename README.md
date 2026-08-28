@@ -2,6 +2,30 @@
 
 Omarchy shell bar widget showing current weather with a detail popup. Cloned from the built-in `omarchy.weather` plugin (id: `weather`).
 
+![Weather bar widget](assets/screenshot.png)
+
+## Install
+
+```bash
+git clone https://github.com/dbohry/weather ~/.config/omarchy/plugins/weather
+omarchy-shell shell rescanPlugins
+```
+
+Then add the widget to the bar: open the Omarchy settings panel (or run
+`omarchy bar`) and enable **My Weather** under the Info category.
+
+## Uninstall
+
+```bash
+omarchy bar remove weather   # or disable it from the settings panel first
+rm -rf ~/.config/omarchy/plugins/weather
+omarchy-shell shell rescanPlugins
+```
+
+The only state this plugin writes is the configured location, saved to
+`~/.local/state/omarchy/settings/weather.json`. Remove that file too if you
+want a completely clean uninstall.
+
 ## What it does
 
 - Bar pill: condition icon + current temperature.
@@ -27,3 +51,11 @@ Configured location is persisted via `omarchy-weather-location` to `~/.local/sta
 
 - `unit` — `"metric"` or `"imperial"` (auto-detected from locale/country if unset)
 - `refreshMinutes` — auto-refresh interval, minimum 1
+
+## Requirements
+
+- Network access to `wttr.in` and/or `open-meteo.com` (both public, no API key).
+
+## License
+
+MIT — see [LICENSE](LICENSE).
