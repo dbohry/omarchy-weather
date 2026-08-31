@@ -7,7 +7,8 @@ Omarchy shell bar widget showing current weather with a detail popup. Cloned fro
 ## Install
 
 ```bash
-git clone https://github.com/dbohry/weather ~/.config/omarchy/plugins/weather
+git clone https://github.com/dbohry/omarchy-weather ~/.config/omarchy/plugins/weather
+omarchy plugin enable weather
 omarchy-shell shell rescanPlugins
 ```
 
